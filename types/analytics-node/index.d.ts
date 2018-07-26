@@ -48,6 +48,7 @@ declare namespace AnalyticsNode {
        traits about them. */
     identify(message: {
       userId: string | number;
+      anonymousId? string | number;
       traits?: Object;
       timestamp?: Date;
       context?: Object;
@@ -58,6 +59,7 @@ declare namespace AnalyticsNode {
     track(message: {
       userId: string | number;
       event: string;
+      anonymousId?: string | number;
       properties?: Object;
       timestamp?: Date;
       context?: Object;
@@ -68,6 +70,7 @@ declare namespace AnalyticsNode {
        optional extra information about the page being viewed. */
     page(message: {
       userId: string | number;
+      anonymousId?: string | number;
       category?: string;
       name?: string;
       properties?: Object;
@@ -91,7 +94,7 @@ declare namespace AnalyticsNode {
       traits?: Object;
       context?: Object;
       timestamp?: Date;
-      anonymous_id?: string | number;
+      anonymousId?: string | number;
       integrations?: Integrations;
     }, callback?: (err: Error, data: Data) => void): Analytics;
 
